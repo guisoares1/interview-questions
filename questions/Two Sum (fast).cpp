@@ -1,23 +1,17 @@
-// quais valores que somados dao o valor enviado por parametro?
+// Valores que somados o resultado é o valor enviado por parâmetro target.
 
 class Solution {
 
 public:
 
     vector<int> twoSum(vector<int>& nums, int target) {
-
         unordered_set<int> listNumsTry;
-
         vector<int> vect;
 
         for(int data:nums){
 
             if(listNumsTry.find(data)!=listNumsTry.end()){
-
-                
-
                 vect.push_back(target - data);
-
                 vect.push_back(data);
 
                 return vect;
@@ -27,11 +21,8 @@ public:
             listNumsTry.insert(target - data);
 
         }
-
-        
-
+  
         return vect;
-
     }
 
 };
