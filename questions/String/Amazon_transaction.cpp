@@ -1,3 +1,5 @@
+unordered_map<string, int> user_transaction; 
+
 vector<string> split(const string &s, char delim) {
         vector<string> elems;
         stringstream ss(s);
