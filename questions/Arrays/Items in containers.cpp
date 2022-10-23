@@ -23,13 +23,14 @@ vector<int> numberOfItems(string s, vector<int> startIndices, vector<int> endInd
             compartmentIndex.push_back(cont);
     }
     // [2 , 5 , 7, 10]
-    // (3, 5) -> 1, 1
+    // (5, 7) -> 1, 2
     for(int cont = 0; cont<startIndices.size(); cont++){
         int start = lower_bound(compartmentIndex.begin(), compartmentIndex.end(), startIndices[cont]-1) - compartmentIndex.begin();
         int end   = upper_bound(compartmentIndex.begin(), compartmentIndex.end(), endIndices[cont]-1) - compartmentIndex.begin() - 1;
         
         if(start<end)
         {
+            // (end-start) -> tratment of the case than dont have any items betwen '|'
             int items = (compartmentIndex[end] - compartmentIndex[start]) - (end-start);
             ret.push_back(items);
         }
