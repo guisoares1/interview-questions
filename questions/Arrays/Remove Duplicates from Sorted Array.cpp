@@ -12,6 +12,7 @@ public:
     int removeDuplicates(vector<int>& nums) {
         int cont2 = 0;
         for(int cont=1; cont< nums.size(); cont++){
+            // cont2 is response to know where is the point of not repeated numbers is. You need that to put not repeated numbers inside of loop
             if(nums[cont]!=nums[cont2]){
                 cont2++;
                 nums[cont2] = nums[cont];
