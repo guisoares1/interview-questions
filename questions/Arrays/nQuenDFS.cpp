@@ -1,3 +1,4 @@
+
 #include <iostream>
 
 using namespace std;
@@ -9,6 +10,7 @@ using namespace std;
 
 
 vector<string> result;
+int achou = 0;
 
 void preencheTabuleiro(vector<string> &tabuleiro, int n){
     string linha = "";
@@ -37,6 +39,7 @@ bool rainhaNaoPodeSerAtacadaNessaPosicao(int row, int col, int n, vector<string>
 void dfsQueens(int row, int n, vector<string>& tabuleiro){
     if(row == n){
         result = tabuleiro ;
+        achou = 1; 
         return;
     }
     
@@ -46,6 +49,10 @@ void dfsQueens(int row, int n, vector<string>& tabuleiro){
             //Place Queen at this position
             tabuleiro[row][cont] = 'Q';
             dfsQueens(row+1, n, tabuleiro);
+    	    if(achou==1)
+    		    return;
+    	
+	        tabuleiro[row][cont] = '.';
             
         }
     }
